@@ -1,0 +1,1018 @@
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "author": "tobias.schellhorn@rhein-kreis-neuss.de",
+  "bytes": 13459568,
+  "count_of_rows": 178929,
+  "hash": "774571c3be6e568d1865c2a4d79bbe9f",
+  "model": {
+    "dimensions": {
+      "administrative-classification": {
+        "attributes": {
+          "produkt_bereich": {
+            "source": "produkt_bereich",
+            "title": "Produkt_Bereich"
+          },
+          "produktbereich_bezeichnung": {
+            "labelfor": "produkt_bereich",
+            "source": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung"
+          },
+          "produktgruppe_bezeichnung": {
+            "labelfor": "produktgruppe_id",
+            "source": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung"
+          },
+          "produktgruppe_id": {
+            "parent": "produkt_bereich",
+            "source": "produktgruppe_id",
+            "title": "Produktgruppe_ID"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "produkt_bereich",
+          "produktgruppe_id"
+        ]
+      },
+      "budget-line-id": {
+        "attributes": {
+          "id": {
+            "source": "id",
+            "title": "ID"
+          }
+        },
+        "dimensionType": "fact",
+        "primaryKey": [
+          "id"
+        ]
+      },
+      "date": {
+        "attributes": {
+          "jahr": {
+            "source": "jahr",
+            "title": "Jahr"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "jahr"
+        ]
+      },
+      "direction": {
+        "attributes": {
+          "buddget_richtung": {
+            "source": "buddget_richtung",
+            "title": "Buddget_Richtung"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "buddget_richtung"
+        ]
+      },
+      "phase": {
+        "attributes": {
+          "betrag_typ": {
+            "source": "betrag_typ",
+            "title": "Betrag_Typ"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": [
+          "betrag_typ"
+        ]
+      }
+    },
+    "measures": {
+      "betrag": {
+        "source": "betrag",
+        "title": "Betrag"
+      }
+    }
+  },
+  "name": "rheinkreisneuss",
+  "owner": "f780ac47be1b9b6f695c41094036ca5e",
+  "profile": "data-package",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "promise": {},
+  "resources": [
+    {
+      "bytes": 10094055,
+      "count_of_rows": 107352,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "0a7e9e7b4949c9f05d7ae46aa5fa9179",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach",
+      "path": "data/offenerhaushalteinfach.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3840209,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2017.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "1f65ebb410c2ffcdb11bc04951108d23",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2017",
+      "path": "data/offenerhaushalteinfach__2017.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3846400,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2018.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "148743418fee84de4f1e1da802481df6",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2018",
+      "path": "data/offenerhaushalteinfach__2018.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3846487,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2019.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "c07ab1e33c6f1e75130497977efd11c1",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2019",
+      "path": "data/offenerhaushalteinfach__2019.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3846428,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2020.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "f50a06cd02e02092f20e9643698ccf9a",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2020",
+      "path": "data/offenerhaushalteinfach__2020.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3846325,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2021.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "113790bc2d8ad1e4ed78df8ad09bccbd",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2021",
+      "path": "data/offenerhaushalteinfach__2021.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3846231,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2022.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "4f7c27b907c6f2ff865f38c6099965eb",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2022",
+      "path": "data/offenerhaushalteinfach__2022.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    },
+    {
+      "bytes": 3846180,
+      "count_of_rows": 40896,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpmc1btp6a/final/data/offenerhaushalteinfach__2023.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "9b76e403ff0021cc53cd7fa49961d0b9",
+      "mediatype": "text/csv",
+      "name": "offenerhaushalteinfach__2023",
+      "path": "data/offenerhaushalteinfach__2023.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "columnType": "budget-line-id",
+            "conceptType": "budget-line-id",
+            "format": "default",
+            "name": "id",
+            "slug": "id",
+            "title": "ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produkt_bereich",
+            "slug": "produkt_bereich",
+            "title": "Produkt_Bereich",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level1:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktbereich_bezeichnung",
+            "slug": "produktbereich_bezeichnung",
+            "title": "Produktbereich_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:code",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_id",
+            "slug": "produktgruppe_id",
+            "title": "Produktgruppe_ID",
+            "type": "string"
+          },
+          {
+            "columnType": "administrative-classification:generic:level2:label",
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "produktgruppe_bezeichnung",
+            "slug": "produktgruppe_bezeichnung",
+            "title": "Produktgruppe_Bezeichnung",
+            "type": "string"
+          },
+          {
+            "columnType": "phase:id",
+            "conceptType": "phase",
+            "format": "default",
+            "name": "betrag_typ",
+            "slug": "betrag_typ",
+            "title": "Betrag_Typ",
+            "type": "string"
+          },
+          {
+            "columnType": "date:fiscal-year",
+            "conceptType": "date",
+            "format": "default",
+            "name": "jahr",
+            "slug": "jahr",
+            "title": "Jahr",
+            "type": "integer"
+          },
+          {
+            "columnType": "value",
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "betrag",
+            "slug": "betrag",
+            "title": "Betrag",
+            "type": "number"
+          },
+          {
+            "columnType": "direction",
+            "conceptType": "direction",
+            "format": "default",
+            "name": "buddget_richtung",
+            "slug": "buddget_richtung",
+            "title": "Buddget_Richtung",
+            "type": "string"
+          }
+        ],
+        "primaryKey": [
+          "id",
+          "produkt_bereich",
+          "produktgruppe_id",
+          "betrag_typ",
+          "jahr",
+          "buddget_richtung"
+        ]
+      }
+    }
+  ],
+  "revision": 0,
+  "title": "Rhein-Kreis Neuss"
+}
