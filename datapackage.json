@@ -116,7 +116,7 @@
       "hash": "0a7e9e7b4949c9f05d7ae46aa5fa9179",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -230,7 +230,7 @@
       "hash": "1f65ebb410c2ffcdb11bc04951108d23",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2017",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2017.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2017.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -344,7 +344,7 @@
       "hash": "148743418fee84de4f1e1da802481df6",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2018",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2018.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2018.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -458,7 +458,7 @@
       "hash": "c07ab1e33c6f1e75130497977efd11c1",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2019",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2019.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2019.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -572,7 +572,7 @@
       "hash": "f50a06cd02e02092f20e9643698ccf9a",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2020",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2020.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2020.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -686,7 +686,7 @@
       "hash": "113790bc2d8ad1e4ed78df8ad09bccbd",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2021",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2021.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2021.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -800,7 +800,7 @@
       "hash": "4f7c27b907c6f2ff865f38c6099965eb",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2022",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2022.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2022.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -914,7 +914,7 @@
       "hash": "9b76e403ff0021cc53cd7fa49961d0b9",
       "mediatype": "text/csv",
       "name": "offenerhaushalteinfach__2023",
-      "path": "https://storage.openspending.org/offenerhaushalteinfach__2023.csv",
+      "path": "https://storage.openspending.org/rhein-kreis-neuss/offenerhaushalteinfach__2023.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
