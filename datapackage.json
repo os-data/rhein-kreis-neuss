@@ -4,6 +4,7 @@
   "bytes": 13459568,
   "count_of_rows": 178929,
   "hash": "774571c3be6e568d1865c2a4d79bbe9f",
+  "countryCode": "DE",
   "model": {
     "dimensions": {
       "administrative-classification": {
